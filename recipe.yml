@@ -19,6 +19,20 @@ description: A starting point for further customization of uBlue images. Make yo
 # using rpm-ostree and will be preinstalled in the final image
 rpms:
   - python3-pip # needed for yafti (the first boot installer)
+  - gnome-tweaks
+  - adw-gtk3
+  - adw-gtk4
+  - morewaita-icon-theme
+  - gnome-extension-pop-shell
+  - kvantum
+  - zsh
+  - neovim
+  - gstreamer1-plugin-libav
+  - gstreamer1-plugins-bad-free-extras
+  - gstreamer1-plugins-bad-freeworld
+  - gstreamer1-plugins-ugly
+  - gstreamer1-vaapi
+  - steam-devices
 
 # These Flatpaks (from flathub) will be available for install on boot
 # this is just an example selection.
