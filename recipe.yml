@@ -1,5 +1,5 @@
 # The image will be at ghcr.io/yourusername/name
-name: startingpoint
+name: ublue-hyprland
 
 # The native container image to build on top of
 # images. 
@@ -25,10 +25,11 @@ rpms:
 # If you leave this empty you can use yafti for post-boot installation
 flatpaks:
   - org.mozilla.firefox
-  - org.mozilla.Thunderbird
   - com.mattjakeman.ExtensionManager
   - org.libreoffice.LibreOffice
   - org.gnome.DejaDup
   - org.gustavoperedo.FontDownloader
   - com.github.tchx84.Flatseal
   - io.github.celluloid_player.Celluloid
+  - org.gtk.Gtk3theme.adw-gtk3
+  - org.gtk.Gtk3theme.adw-gtk3-dark
