@@ -1,4 +1,7 @@
-# Starting point
+# uBlue Hyprland
+
+**DO NOT USE**
+At this point in time (and possibly forever), this repo is just for me testing things out and learning how this system works. It doesn't even have Hyprland in it yet. 
 
 [![build-ublue](https://github.com/ublue-os/startingpoint/actions/workflows/build.yml/badge.svg)](https://github.com/ublue-os/startingpoint/actions/workflows/build.yml)
 
