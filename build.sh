@@ -34,6 +34,15 @@ if [[ ! -d /usr/share/nautilus-python/extensions/ ]]; then
 fi
 curl https://raw.githubusercontent.com/ppvan/OpenInBlackBox/main/blackbox_extension.py > /usr/share/nautilus-python/extensions/blackbox_extension.py
 
+echo "-- Setting BlackBox as default terminal --"
+tee /usr/bin/blackbox <<EOF
+#!/bin/bash
+flatpak run com.raggesilver.BlackBox \$@
+EOF
+chmod +x /usr/bin/blackbox
+update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/bin/blackbox 50
+update-alternatives --set x-terminal-emulator /usr/bin/blackbox
+
 echo "-- Installing yafti to install Flatpaks on boot --"
 # install yafti to install flatpaks on first boot, https://github.com/ublue-os/yafti
 pip install --prefix=/usr yafti
