@@ -23,7 +23,7 @@ rpms:
   - adw-gtk3
   - adw-gtk4
   - morewaita-icon-theme
-  - gnome-extension-pop-shell
+  - gnome-shell-extension-pop-shell
   - kvantum
   - zsh
   - neovim
