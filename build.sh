@@ -39,7 +39,7 @@ mkdir -p /etc/distrobox
 echo "container_image_default=\"registry.fedoraproject.org/fedora-toolbox:$(rpm -E %fedora)\"" >> /etc/distrobox/distrobox.conf
 
 echo "-- Installing terminal support for Nautilus --"
-pip install nautilus-open-any-terminal
+pip install --prefix=/usr nautilus-open-any-terminal
 glib-compile-schemas /usr/share/glib-2.0/schemas
 
 echo "-- Updating dconf to load theme changes --"
