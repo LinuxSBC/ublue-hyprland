@@ -3,3 +3,6 @@ terminal='blackbox'
 keybindings='<Ctrl><Alt>t'
 new-tab=false
 flatpak='system'
+
+[org/gnome/desktop/default-applications/terminal]
+exec=x-terminal-emulator
