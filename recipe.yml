@@ -24,6 +24,8 @@ rpms:
   - adw-gtk4
   - morewaita-icon-theme
   - gnome-shell-extension-pop-shell
+  - gnome-shell-extension-appindicator
+  - gnome-shell-extension-blur-my-shell
   - kvantum
   - zsh
   - neovim

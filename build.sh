@@ -20,6 +20,10 @@ echo "-- Configuring Distrobox --"
 mkdir -p /etc/distrobox
 echo "container_image_default=\"registry.fedoraproject.org/fedora-toolbox:$(rpm -E %fedora)\"" >> /etc/distrobox/distrobox.conf
 
+echo "-- Installing terminal support for Nautilus --"
+pip install nautilus-open-any-terminal
+glib-compile-schemas /usr/share/glib-2.0/schemas
+
 echo "-- Updating dconf to load theme changes --"
 dconf update
 
@@ -28,11 +32,11 @@ rpm-ostree override remove gnome-extensions-app
 echo "-- Removing gnome-terminal in favor of the BlackBox flatpak --"
 rpm-ostree override remove gnome-terminal gnome-terminal-nautilus
 
-echo "-- Installing OpenInBlackBox for Nautilus integration --" # Switch to nautilus-open-any-terminal?
-if [[ ! -d /usr/share/nautilus-python/extensions/ ]]; then
-    mkdir -v -p /usr/share/nautilus-python/extensions/
-fi
-curl https://raw.githubusercontent.com/ppvan/OpenInBlackBox/main/blackbox_extension.py > /usr/share/nautilus-python/extensions/blackbox_extension.py
+#echo "-- Installing OpenInBlackBox for Nautilus integration --" # Switch to nautilus-open-any-terminal?
+#if [[ ! -d /usr/share/nautilus-python/extensions/ ]]; then
+#    mkdir -v -p /usr/share/nautilus-python/extensions/
+#fi
+#curl https://raw.githubusercontent.com/ppvan/OpenInBlackBox/main/blackbox_extension.py > /usr/share/nautilus-python/extensions/blackbox_extension.py
 
 # install yafti to install flatpaks on first boot, https://github.com/ublue-os/yafti
 pip install --prefix=/usr yafti
