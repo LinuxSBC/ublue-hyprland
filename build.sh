@@ -8,6 +8,12 @@ curl https://copr.fedorainfracloud.org/coprs/nickavem/adw-gtk3/repo/fedora-${FED
 echo "-- Installing MoreWaita COPR repo --"
 curl https://copr.fedorainfracloud.org/coprs/dusansimic/themes/repo/fedora-${FEDORA_MAJOR_VERSION}/dusansimic-themes-fedora-${FEDORA_MAJOR_VERSION}.repo > /etc/yum.repos.d/dusansimic-themes-fedora-${FEDORA_MAJOR_VERSION}.repo
 
+echo "-- Installing Hyprland COPR repo --"
+curl https://copr.fedorainfracloud.org/coprs/solopasha/hyprland/repo/fedora-${FEDORA_MAJOR_VERSION}/solopasha-hyprland-fedora-${FEDORA_MAJOR_VERSION}.repo > /etc/yum.repos.d/solopasha-hyprland-fedora-${FEDORA_MAJOR_VERSION}.repo
+
+echo "-- Installing EWW COPR repo --"
+curl https://copr.fedorainfracloud.org/coprs/axeld/eww/repo/fedora-${FEDORA_MAJOR_VERSION}/axeld-eww-fedora-${FEDORA_MAJOR_VERSION}.repo > /etc/yum.repos.d/axeld-wee-fedora-${FEDORA_MAJOR_VERSION}.repo
+
 echo "-- Installing RPMs defined in recipe.yml --"
 rpm_packages=$(yq '.rpms[]' < /tmp/ublue-recipe.yml)
 for pkg in $(echo -e "$rpm_packages"); do \
