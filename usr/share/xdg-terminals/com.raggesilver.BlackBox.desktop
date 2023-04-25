@@ -12,6 +12,7 @@ Name[zh_CN]=Black Box
 Name[pt_BR]=Black Box
 Name=Black Box
 Exec=/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=blackbox com.raggesilver.BlackBox
+X-ExecArg=-c
 Terminal=false
 Type=Application
 Categories=GNOME;GTK;System;TerminalEmulator;
@@ -30,4 +31,3 @@ Keywords[pt_BR]=Terminal;terminal;shell;prompt;command;commandline;cmd;box;coman
 Keywords=Terminal;terminal;shell;prompt;command;commandline;cmd;box;
 Icon=com.raggesilver.BlackBox
 X-Flatpak=com.raggesilver.BlackBox
-
