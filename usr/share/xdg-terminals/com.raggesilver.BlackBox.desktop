@@ -11,7 +11,8 @@ Name[tr]=Kara Kutu
 Name[zh_CN]=Black Box
 Name[pt_BR]=Black Box
 Name=Black Box
-Exec=/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=blackbox com.raggesilver.BlackBox
+#Exec=/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=blackbox com.raggesilver.BlackBox
+Exec=/usr/bin/blackbox
 X-ExecArg=-c
 Terminal=false
 Type=Application
