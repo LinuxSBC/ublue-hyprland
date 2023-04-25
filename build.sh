@@ -67,7 +67,7 @@ chmod +x /usr/bin/blackbox
 update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/bin/blackbox 50
 update-alternatives --set x-terminal-emulator /usr/bin/blackbox
 
-curl https://github.com/Vladimir-csp/xdg-terminal-exec/raw/master/xdg-terminal-exec > /usr/bin/xdg-terminal-exec
+curl https://raw.githubusercontent.com/Vladimir-csp/xdg-terminal-exec/master/xdg-terminal-exec > /usr/bin/xdg-terminal-exec
 chmod +x /usr/bin/xdg-terminal-exec
 
 echo "-- Installing yafti to install Flatpaks on boot --"
