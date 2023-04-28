@@ -34,7 +34,21 @@ rpms:
   # needed for yafti (the first boot installer) (remove if you're not using yafti)
   - python3-pip
   - libadwaita # libadwaita comes with silverblue, but not with other flavors
-  # add your own below
+  - python3-pip # needed for yafti (the first boot installer)
+  - gnome-tweaks
+  - adw-gtk3
+  - adw-gtk4
+  - morewaita-icon-theme
+  - gnome-extension-pop-shell
+  - kvantum
+  - zsh
+  - neovim
+  - gstreamer1-plugin-libav
+  - gstreamer1-plugins-bad-free-extras
+  - gstreamer1-plugins-bad-freeworld
+  - gstreamer1-plugins-ugly
+  - gstreamer1-vaapi
+  - steam-devices
 
 # These Flatpaks (from flathub) will be available for install on boot
 # this is just an example selection.
