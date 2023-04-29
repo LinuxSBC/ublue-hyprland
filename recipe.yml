@@ -22,6 +22,9 @@ description: A starting point for further customization of uBlue images. Make yo
 # Place scripts in scripts/ and put the corresponding filename here
 scripts:
 #  - example.sh
+  - themes.sh
+  - extensions.sh
+  - blackbox.sh
 
 # a list of urls of .repo files that should be added to your system
 # this is the proper way to add copr repos to your image
@@ -32,7 +35,7 @@ extrarepos:
   - https://copr.fedorainfracloud.org/coprs/dusansimic/themes/repo/fedora-38/dusansimic-themes-fedora-38.repo
   - https://copr.fedorainfracloud.org/coprs/solopasha/hyprland/repo/fedora-38/solopasha-hyprland-fedora-38.repo
   - https://copr.fedorainfracloud.org/coprs/axeld/eww/repo/fedora-38/axeld-eww-fedora-38.repo
-  
+
 # These rpms will be installed from the fedora repository
 # using rpm-ostree and will be preinstalled in the final image
 rpms:
