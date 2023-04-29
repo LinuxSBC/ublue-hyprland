@@ -11,7 +11,7 @@ curl https://raw.githubusercontent.com/ppvan/OpenInBlackBox/main/blackbox_extens
 echo "-- Setting BlackBox as default terminal --"
 tee /usr/bin/blackbox <<EOF
 #!/bin/bash
-/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=blackbox com.raggesilver.BlackBox \$@
+/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=blackbox com.raggesilver.BlackBox "\$@"
 EOF
 chmod +x /usr/bin/blackbox
 update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/bin/blackbox 50
