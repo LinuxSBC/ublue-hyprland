@@ -1,7 +1,9 @@
 # uBlue Hyprland
 
-**DO NOT USE**
-At this point in time (and possibly forever), this repo is just for me testing things out and learning how this system works. It doesn't even have Hyprland in it yet. 
+**DO NOT USE** 
+At this point in time (and possibly forever), this repo is just for me testing things out and learning how this system works. It is probably buggy and might not work how you expect.
+
+Warning: This repo has the SysRq key enabled. While this is useful to me in case the computer freezes so I can reboot it or kill the process using the most RAM, it is also insecure if an attacker has physical access to your computer. I've disabled some of the most dangerous options (it's currently set to 244=011110100), but if you're worried about someone malicious with physical access to your computer, remove /etc/sysctl.d/90-sysrq.conf.
 
 [![build-ublue](https://github.com/ublue-os/startingpoint/actions/workflows/build.yml/badge.svg)](https://github.com/ublue-os/startingpoint/actions/workflows/build.yml)
 
