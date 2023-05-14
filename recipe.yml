@@ -107,8 +107,6 @@ rpm:
     # Remove the native firefox (from Fedora) in favor of the Flatpak.
     - firefox
     - firefox-langpacks
-    # Remove the built-in GNOME Extensions app in favor of the better Flatpak.
-    - gnome-extensions-app
 
 # These Flatpaks will be suggested for install after user login, via the yafti
 # "first boot" GUI. Everything below will be merged into the "yafti.yml" config
