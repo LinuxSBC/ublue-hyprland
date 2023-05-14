@@ -71,7 +71,6 @@ rpm:
     # - tilix
     - gnome-tweaks
     - adw-gtk3
-    - adw-gtk4
     - morewaita-icon-theme
     - gnome-shell-extension-pop-shell
     - gnome-shell-extension-appindicator
