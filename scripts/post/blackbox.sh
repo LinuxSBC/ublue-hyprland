@@ -1,6 +1,4 @@
 #!/bin/bash
-set -oue pipefail
-
 echo "-- Removing gnome-terminal in favor of the BlackBox flatpak --"
 rpm-ostree override remove gnome-terminal gnome-terminal-nautilus
 
