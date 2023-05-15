@@ -26,10 +26,10 @@ The easiest way to start customizing is by looking at and modifying `recipe.yml`
 
 For the base-image field, you can use any other native container image. You will get all the features of that image, plus the ones added here! Check out the [uBlue images list](https://ublue.it/images/) to decide what to use!
 
-If you want to add custom configuration files, you can just add them in the `etc` directory. If you need to add other directories, you can look at the Containerfile to see how it's done. Writing to any directories under `/var` in Fedora Silverblue are not supported and will not work, as those are user-managed.
+If you want to add custom configuration files, you can just add them in the `usr/etc/` directory, which is the official OSTree "configuration template" directory. If you need to add other directories, you can look at the Containerfile to see how it's done. Writing to `/etc` or `/var` in Fedora's immutable OSTree-based distros *isn't supported* and will not work, as those are user-managed locations!
 
 > **Note**
-> The configuration files you put in the `etc` directory are actually added to `/usr/etc/` where they get applied to your local `/etc/` when rebasing to or updating the image. If a config file in `/etc/` has been changed, the changes won't be overridden, but the new version will be available in `/usr/etc/`. Run `sudo ostree admin config-diff` to see the difference between `/etc/` and `/usr/etc/` (`man ostree-admin-config-diff` for further documentation).
+> The configuration files you put in `/usr/etc/` will automatically be applied to your local `/etc/` by `systemd` whenever you rebase an OSTree system or update the image. If a config file in `/etc/` has been *modified* (compared to the same deployment's defaults), then OSTree [won't overwrite it](https://github.com/ostreedev/ostree/blob/16cb47489e582da9c139fee20acdac7079867843/docs/atomic-upgrades.md?plain=1#L76), but the new version will be available in `/usr/etc/`. Run `sudo ostree admin config-diff` to see the difference between `/etc/` and `/usr/etc/` (`man ostree-admin-config-diff` for further documentation).
 
 ### Custom build scripts
 
@@ -77,9 +77,9 @@ matrix:
 
 `yafti` is the uBlue "first boot" installer. It shows up the first time a user logs into uBlue. By default, the menu also shows up again anytime the image's yafti configuration differs from the user's last encounter, so feel free to expand or modify your custom image's yafti configuration over time. Your users will then see the yafti menu again after the OS update, and will be given a chance to install any new additions.
 
-Its configuration can be found in `/usr/share/ublue-os/firstboot/yafti.yml` of the installed OS. It includes an optional selection of Flatpaks to install, along with a new group that's automatically added for all Flatpaks declared in `recipe.yml`. You can look at what's done in the config and modify it to your liking (in the repository, before building the image, since the installed system file is immutable).
+Its configuration can be found in `/usr/share/ublue-os/firstboot/yafti.yml` of the installed OS. It includes an optional selection of Flatpaks to install, along with a new group that's automatically added for all Flatpaks declared in `recipe.yml`. You can look at what's done in the `yafti.yml` config and modify it to your liking (in the repository, before building the image, since the installed system file is immutable).
 
-The files `/usr/etc/profile.d/ublue-firstboot.sh` and `/usr/etc/skel.d/.config/autostart/ublue-firstboot.desktop` set up `yafti` so that it starts on boot, which means that you shouldn't touch those files if you wish to retain that functionality.
+If you want to completely disable yafti, simply set the recipe's `firstboot.yafti` flag to `false`, which then removes all yafti-related files and configurations from your final image. The files in `usr/share/ublue-os/firstboot/` are responsible for automatically running yafti at login, and they will *only* be bundled in your image if `yafti` is enabled in your recipe!
 
 ## Installation
 
@@ -102,9 +102,17 @@ The `latest` tag will automatically point to the latest build. That build will s
 
 ## Just
 
-The `just` task runner is included in `main` for further customization after first boot.
+The `just` task runner is included in `ublue-os/main`-derived images, and we have provided several template commands which help you perform further customization after first boot.
 
-You can copy the justfile from `/usr/share/ublue-os/just/justfile` to `~/.justfile` to get started. When `just` supports [include directives](https://just.systems/man/en/chapter_52.html), you will instead be able to simply include that path into your own justfile, without having to copy it manually.
+You can merge our template justfiles into your own local configuration. When `just` supports [include directives](https://just.systems/man/en/chapter_52.html), you will instead be able to simply include these paths into your own justfile, without having to copy anything manually.
+
+Run the following commands when you're logged into the operating system, to merge uBlue's provided configurations into your own user config. (The "touch" command is only necessary on certain shells which won't let you merge into non-existent files.)
+
+```sh
+touch ~/.justfile
+cat /usr/share/ublue-os/just/main.just >> ~/.justfile
+cat /usr/share/ublue-os/just/custom.just >> ~/.justfile
+```
 
 After doing that, you'll be able to run the following commands:
 
