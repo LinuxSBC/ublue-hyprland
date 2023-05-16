@@ -48,7 +48,6 @@ rpm:
   repos:
     # Example (which also demonstrates version number expansion):
     # - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%FEDORA_VERSION%/atim-starship-fedora-%FEDORA_VERSION%.repo
-    - https://copr.fedorainfracloud.org/coprs/nickavem/adw-gtk3/repo/fedora-%FEDORA_VERSION%/nickavem-adw-gtk3-fedora-%FEDORA_VERSION%.repo
     - https://copr.fedorainfracloud.org/coprs/dusansimic/themes/repo/fedora-%FEDORA_VERSION%/dusansimic-themes-fedora-%FEDORA_VERSION%.repo
     - https://copr.fedorainfracloud.org/coprs/solopasha/hyprland/repo/fedora-%FEDORA_VERSION%/solopasha-hyprland-fedora-%FEDORA_VERSION%.repo
     - https://copr.fedorainfracloud.org/coprs/axeld/eww/repo/fedora-%FEDORA_VERSION%/axeld-eww-fedora-%FEDORA_VERSION%.repo
@@ -69,7 +68,6 @@ rpm:
     # Example:
     # - tilix
     - gnome-tweaks
-    - adw-gtk3
     - morewaita-icon-theme
     - gnome-shell-extension-pop-shell
     - gnome-shell-extension-appindicator
