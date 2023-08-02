@@ -14,7 +14,7 @@ base-image: ghcr.io/ublue-os/silverblue-main
 fedora-version: 38
 
 # This description will be visible in the container metadata.
-description: A starting point for further customization of uBlue images. Make your own! https://ublue.it/making-your-own/
+description: A personal Fedora Silverblue/uBlue-based distro with my own customizations.
 
 # These scripts will be executed during the container build.
 # Place scripts in the "scripts/" dir and put the corresponding filenames here.
@@ -48,6 +48,7 @@ rpm:
   repos:
     # Example (which also demonstrates version number expansion):
     # - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%FEDORA_VERSION%/atim-starship-fedora-%FEDORA_VERSION%.repo
+    - https://copr.fedorainfracloud.org/coprs/dusansimic/themes/repo/fedora-%FEDORA_VERSION%/dusansimic-themes-fedora-%FEDORA_VERSION%.repo
 
   # These RPMs will be installed from your enabled repositories (Fedora's own
   # repos, extra "repos" you've added, etc). The installation is automatically
@@ -64,6 +65,26 @@ rpm:
     # Add your own below:
     # Example:
     # - tilix
+    - gnome-tweaks # Remove? I can get it in distrobox
+    - morewaita-icon-theme # Same
+    - gnome-shell-extension-pop-shell
+    - gnome-shell-extension-appindicator
+    - gnome-shell-extension-blur-my-shell
+    - kvantum
+    - zsh
+    - neovim
+    - gstreamer1-plugin-libav
+    - gstreamer1-plugins-bad-free-extras
+    - gstreamer1-plugins-bad-freeworld
+    - gstreamer1-plugins-ugly
+    - gstreamer1-vaapi
+    - steam-devices
+    - nautilus-python
+    - tmux
+    - bat
+    - gh
+    - socat
+    - wl-clipboard
 
   # These RPMs will be removed from the system image. This step happens during
   # image build, BEFORE installing custom RPMs (from the "rpm.install" category).
@@ -88,4 +109,5 @@ firstboot:
   # This is just an example selection:
   flatpaks:
     - io.github.celluloid_player.Celluloid
-    - org.kde.krita
+    - org.gtk.Gtk3theme.adw-gtk3
+    - org.gtk.Gtk3theme.adw-gtk3-dark

@@ -1,0 +1,6 @@
+[org/gnome/desktop/interface]
+color-scheme='prefer-dark'
+cursor-theme='Adwaita'
+font-antialiasing='rgba'
+gtk-theme='adw-gtk3-dark'
+icon-theme='MoreWaita'
