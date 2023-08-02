@@ -1,5 +1,7 @@
 # Starting point
 
+Warning: This repo has the SysRq key enabled. While this is useful to me in case the computer freezes so I can reboot it or kill the process using the most RAM, it is also insecure if an attacker has physical access to your computer. I've disabled some of the most dangerous options (it's currently set to 244=011110100), but if you're worried about someone malicious with physical access to your computer, remove /etc/sysctl.d/90-sysrq.conf.
+
 [![build-ublue](https://github.com/linuxsbc/ublue/actions/workflows/build.yml/badge.svg)](https://github.com/linuxsbc/ublue/actions/workflows/build.yml)
 
 This is a constantly updating template repository for creating [a native container image](https://fedoraproject.org/wiki/Changes/OstreeNativeContainerStable) designed to be customized however you want. GitHub will build your image for you, and then host it for you on [ghcr.io](https://github.com/features/packages). You then just tell your computer to boot off of that image. GitHub keeps 90 days worth image backups for you, thanks Microsoft!
