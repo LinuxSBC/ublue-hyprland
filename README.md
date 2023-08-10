@@ -1,6 +1,6 @@
 # Starting point
 
-Warning: This repo has the SysRq key enabled. While this is useful to me in case the computer freezes so I can reboot it or kill the process using the most RAM, it is also insecure if an attacker has physical access to your computer. I've disabled some of the most dangerous options (it's currently set to 244=011110100), but if you're worried about someone malicious with physical access to your computer, remove /etc/sysctl.d/90-sysrq.conf.
+Warning: This repo has the SysRq key enabled. While this is useful to me in case the computer freezes so I can reboot it or kill the process using the most RAM, it is also insecure if an attacker has physical access to your computer. I've disabled some of the most dangerous options (it's currently set to 244=011110100), but if you're worried about someone malicious with physical access to your computer, remove /etc/sysctl.d/90-sysrq.conf (though you probably have bigger problems than SysRq and should be using something much more hardened).
 
 [![build-ublue](https://github.com/linuxsbc/ublue/actions/workflows/build.yml/badge.svg)](https://github.com/linuxsbc/ublue/actions/workflows/build.yml)
 
